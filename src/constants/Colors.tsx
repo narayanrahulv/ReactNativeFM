@@ -6,6 +6,9 @@ const Colors = {
     windowsBlue: '#385EBA',
 
     lightMossGreen: "#8FC672",
+    regularGreen: "#008000",
+    darkGreen: "#006400",
+    forestGreen: "#228B22",
 
     warmGrey: '#8f8f8f',
     grey: '#9D9D9D',
