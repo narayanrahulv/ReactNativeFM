@@ -12,7 +12,7 @@ export default class PlayerProfileScreen extends Component<{ navigation: any }>{
                     <Text>View main screen</Text>
                 </TouchableOpacity>
 
-                <TouchableOpacity onPress={() => {this.props.navigation.navigate("LeagueListing")}}>
+                <TouchableOpacity onPress={() => {this.props.navigation.navigate("LeagueSeasons")}}>
                     <Text>View league listing</Text>
                 </TouchableOpacity>
             </View>
