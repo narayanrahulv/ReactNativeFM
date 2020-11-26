@@ -24,13 +24,45 @@ export default class LeagueSeasonsScreen extends Component<{ navigation: any, St
 
     private ls = new LeagueService();
     private allLeagues: LeagueModel[];
+    private allLeaguesForType: LeagueModel[];
 
     componentDidMount = async () => {
-        //retrieve all leagues from the API
-        this.allLeagues = await this.ls.getAllLeagues();
+        //TEMP TESTING CODE
+        console.log("======");
+        console.log(this.props.navigation.state.params.leagueData);
+        console.log(this.props.navigation.state.params.leagueType);
 
-        //display tiles for each season retrieved
-        this.displayLeagueSeasonYears();
+        //this.getLeagueTypeDataAndYears();
+        this.displayLeagues();
+        //END TEMP TESTING CODE
+
+        //TEMP COMMENTED OUT
+        // //retrieve all leagues from the API
+        // this.allLeagues = await this.ls.getAllLeagues();
+
+        // //display tiles for each season retrieved
+        // this.displayLeagueSeasonYears();
+        //END TEMP COMMENTED OUT
+    }
+
+    displayLeagues() {
+        this.allLeaguesForType = this.props.navigation.state.params.leagueData.filter
+                                (l => (l.type === this.props.navigation.state.params.leagueType));
+
+        console.log("this.allLeaguesForType");
+        console.log(this.allLeaguesForType);                                
+    }
+
+    getLeagueTypeDataAndYears() {
+        //filter out relevant leagues based on leagueType passed in
+        this.allLeaguesForType = this.props.navigation.state.params.leagueData.filter
+                                (l => (l.type === this.props.navigation.state.params.leagueType));
+
+        console.log("this.allLeaguesForType");
+        console.log(this.allLeaguesForType);                                
+
+        //retrieve unique years from above list
+        //const leagueSeasonYears = [...new Set(this.allLeagues.map(item => item.season))]
     }
 
     showPopularLeaguesForSeason(currentLeagueSeason: number) {
