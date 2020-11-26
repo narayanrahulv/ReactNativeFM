@@ -12,7 +12,6 @@ import { LeagueModel } from '../../datamodels/LeagueModel';
 import Styles from '../../constants/Styles';
 import Colors from '../../constants/Colors';
 import Fonts from '../../constants/Fonts';
-import { popularLeagues } from '../../constants/AppConstants';
 
 export default class PopularLeagues extends Component<{
     leagueSeason: number,
