@@ -62,7 +62,7 @@ export default class LoadingScreen extends Component<{ navigation: any }>{
                     return(
                         <View key={i} style={Styles.tilecontainer}>
                             <TouchableOpacity onPress={() => this.viewInfoForLeagueType(lt)}>
-                                <Text style={Styles.tile1title}>{lt}</Text>
+                                <Text style={Styles.titletext}>{lt}</Text>
                             </TouchableOpacity>
                         </View>    
                     )

@@ -15,3 +15,17 @@ export function getPopularLeagueList(): string[] {
 export function getPopularLeagueCountriesList(): string[] {
     return ["England","Spain","France","Italy","Germany","Netherlands","USA"];
 }
+
+export const icons = {
+    bundesliga1: require('../assets/icons/bundesliga-1.png'),
+    championsleague: require('../assets/icons/champions-league.png'),
+    eredivisie: require('../assets/icons/eredivisie.png'),
+    ligue1: require('../assets/icons/ligue-1.png'),
+    majorleaguesoccer: require('../assets/icons/major-league-soccer.png'),
+    premierleague: require('../assets/icons/premier-league.png'),
+    primeradivision: require('../assets/icons/primera-division.png'),
+    seriea: require('../assets/icons/serie-a.png'),
+    uefaleague: require('../assets/icons/uefa-league.png'),
+    womensworldcup: require('../assets/icons/womens-world-cup.png'),
+    worldcup: require('../assets/icons/world-cup.png'),
+}

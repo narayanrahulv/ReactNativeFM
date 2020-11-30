@@ -5,21 +5,20 @@ import Fonts from './Fonts';
 export default StyleSheet.create({
     //containers/views
     maincontainer: {
-        backgroundColor: Colors.lightGrey,
+        backgroundColor: Colors.darkGreen,
         flex: 1
     },
 
     tilecontainer: {
-        borderRadius: 10,
-        backgroundColor: Colors.darkGreen,
+        borderRadius: 5,
+        backgroundColor: Colors.white,
 
-        marginVertical: 5,
-        padding: 15,
-        marginHorizontal: 25,
+        marginVertical: 2,
+        //padding: Dimensions.get('window').width > 375 ? 15 : 7,
 
         shadowColor: Colors.grey,
         shadowRadius: 3,
-        shadowOffset: { width: 0, height: 3 },
+        shadowOffset: { width: 0, height: 1 },
         shadowOpacity: 0.5,
         elevation: 2
     },
@@ -31,17 +30,23 @@ export default StyleSheet.create({
         alignItems: 'center'
     },
 
+    contentContainer: {
+        height: 45,
+        borderWidth: 1,
+        borderColor: Colors.black
+    },
+
     //text
     headingtext: {
         fontFamily: Fonts.NunitoBold,
-        color: Colors.windowsBlue,
+        color: Colors.black,
         fontSize: 36,
         lineHeight: 24,
         textAlign: 'center',
     },
-    tile1title: {
+    titletext: {
         fontSize: 26,
-        color: Colors.warmGrey,
+        color: Colors.black,
         lineHeight: 40,
     }
 });

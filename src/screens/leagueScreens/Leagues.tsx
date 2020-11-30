@@ -12,10 +12,11 @@ import { LeagueModel } from '../../datamodels/LeagueModel';
 import Styles from '../../constants/Styles';
 import Colors from '../../constants/Colors';
 import Fonts from '../../constants/Fonts';
-import { getPopularCupList, getPopularLeagueList, getPopularLeagueCountriesList, getPopularCupCountriesList } from '../../constants/AppConstants';
+import { getPopularCupList, getPopularLeagueList, getPopularLeagueCountriesList, getPopularCupCountriesList, icons } from '../../constants/AppConstants';
 
 // Components
-import PopularCups from '../../components/leagueComponents/PopularCups';
+// import PopularCups from '../../components/leagueComponents/PopularCups';
+import LeagueImage from '../../components/leagueComponents/LeagueImage';
 
 export default class LeaguesScreen extends Component<{ navigation: any, StateModel }> {
     constructor(props) {
@@ -61,19 +62,29 @@ export default class LeaguesScreen extends Component<{ navigation: any, StateMod
         })
     }
 
+    getLeagueIcon = async(leagueName: string) => {
+        var iconlookup = leagueName.replace(/\s/g,"").toLowerCase();
+        console.log(icons[iconlookup]);
+    }
+
     render() {
         return (
             <ScrollView style={Styles.maincontainer}>
-            { 
-                this.state.displayedLeagueNames.map((dl, i) => 
                 {
-                    return(
-                        <View key={i} style={Styles.tilecontainer}>
-                            <Text style={Styles.tile1title}>{dl}</Text>
-                        </View>
-                    )
-                })
-            }
+                    this.state.displayedLeagueNames.map((dl, i) => {
+                        return(
+                            <View key={i} style={[Styles.tilecontainer,
+                                {flexDirection: 'row', alignItems: 'center', justifyContent:'space-between'}]}>
+                                <View style={{ width: "50%", marginLeft: 5}}>
+                                    <Text style={Styles.titletext}>{dl}</Text>
+                                </View>
+                                <View style={{ width: "50%"}}>
+                                    <LeagueImage leagueName={dl} />
+                                </View>
+                            </View> 
+                        )
+                    })
+                }
             </ScrollView>
         )
     }
